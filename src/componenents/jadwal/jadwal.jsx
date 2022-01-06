@@ -1,4 +1,4 @@
-import { Table } from "antd";
+import { Button, Table } from "antd";
 import React from "react";
 
 const Jadwal = () => {
@@ -17,6 +17,26 @@ const Jadwal = () => {
       title: "Address",
       dataIndex: "address",
       key: "address",
+    },
+    {
+      title: "action",
+      dataIndex: "action",
+      key: "action",
+      render: () => (
+        <div>
+          <Button
+            type="primary"
+            style={{
+              backgroundColor: "red",
+              outline: "none",
+              borderColor: "red",
+            }}
+          >
+            delete
+          </Button>
+          <Button>detail</Button>
+        </div>
+      ),
     },
   ];
 
