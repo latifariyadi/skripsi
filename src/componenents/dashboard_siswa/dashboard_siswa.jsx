@@ -1,5 +1,5 @@
-import React from 'react';
-import { Layout, Menu } from 'antd';
+import React from "react";
+import { Layout, Menu } from "antd";
 import "./dashboard_siswa.css";
 import {
   CalendarOutlined,
@@ -9,9 +9,10 @@ import {
   PieChartOutlined,
   QuestionCircleOutlined,
   UserOutlined,
-} from '@ant-design/icons';
-import Pengumuman from '../pengumuman/pengumuman';
-import InfoBeasiswa from '../Slider/carousel';
+} from "@ant-design/icons";
+// import Pengumuman from "../pengumuman/pengumuman";
+import InfoBeasiswa from "../Slider/carousel";
+import Jadwal from "../jadwal/Jadwal";
 
 const { Header, Content, Footer, Sider } = Layout;
 const { SubMenu } = Menu;
@@ -21,7 +22,7 @@ class DashboardSiswa extends React.Component {
     collapsed: false,
   };
 
-  onCollapse = collapsed => {
+  onCollapse = (collapsed) => {
     console.log(collapsed);
     this.setState({ collapsed });
   };
@@ -29,9 +30,23 @@ class DashboardSiswa extends React.Component {
   render() {
     const { collapsed } = this.state;
     return (
-      <Layout style={{ minHeight: '100vh' }}>
-        <Sider collapsible collapsed={collapsed} onCollapse={this.onCollapse}>
-          <Menu theme="dark" defaultSelectedKeys={['1']} mode="inline">
+      <Layout style={{ minHeight: "100vh" }}>
+        <Sider
+          collapsible
+          collapsed={collapsed}
+          onCollapse={this.onCollapse}
+          style={{
+            backgroundColor: "red",
+          }}
+        >
+          <Menu
+            theme="dark"
+            defaultSelectedKeys={["1"]}
+            mode="inline"
+            style={{
+              backgroundColor: "red",
+            }}
+          >
             <Menu.Item key="1" icon={<PieChartOutlined />}>
               Dashboard
             </Menu.Item>
@@ -39,7 +54,7 @@ class DashboardSiswa extends React.Component {
               Jadwal
             </Menu.Item>
             <Menu.Item key="3" icon={<FileTextOutlined />}>
-              Tugas 
+              Tugas
             </Menu.Item>
             <Menu.Item key="4" icon={<ProfileOutlined />}>
               Kehadiran
@@ -58,18 +73,32 @@ class DashboardSiswa extends React.Component {
           </Menu>
         </Sider>
         <Layout className="site-layout">
-          <Header className='header' style={{ padding: '20px' }}>
-            <div className="logo" >
+          <Header className="header" style={{ padding: "20px" }}>
+            <div className="logo">
               <h4>SISTEM INFORMASI AKADEMIK SMAN 12 OKU TIMUR</h4>
             </div>
+
+            <img
+              src={"https://picsum.photos/seed/13/200"}
+              alt=""
+              style={{
+                width: 36,
+                height: 36,
+                borderRadius: "100px",
+              }}
+            />
           </Header>
-          <Content style={{ margin: '20PX 16px' }}>     
-            <InfoBeasiswa />     
-            <div className="site-layout-background" style={{ minHeight: 360 }}>
+          <Content style={{ margin: "20PX 16px" }}>
+            <InfoBeasiswa />
+            {/* <div className="site-layout-background" style={{ minHeight: 360 }}>
               <Pengumuman />
-            </div>
+            </div> */}
+
+            <Jadwal />
           </Content>
-          <Footer style={{ textAlign: 'center' }}>SMAN 12 OKU TIMUR ©2022 Created by Latif Ariyadi</Footer>
+          <Footer style={{ textAlign: "center" }}>
+            SMAN 12 OKU TIMUR ©2022 Created by Latif Ariyadi
+          </Footer>
         </Layout>
       </Layout>
     );
