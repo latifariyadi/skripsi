@@ -1,0 +1,45 @@
+.logo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+}
+
+.logo h4 {
+  color: #001529;
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-align: center;
+  margin-top: 8px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.user {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.user p {
+  margin-right: 8px;
+  font-size: 1rem;
+  color: #001529;
+  line-height: 1rem;
+  margin-bottom: -1px;
+}
+
+.user p span {
+  font-size: 0.8rem;
+}
+
+.nama {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  flex-direction: column;
+}

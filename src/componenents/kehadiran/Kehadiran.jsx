@@ -1,7 +1,7 @@
-import React from "react";
 import { Button, Table } from "antd";
+import React from "react";
 
-const Jadwal = () => {
+const Kehadiran = () => {
   const columns = [
     {
       title: "Waktu",
@@ -62,4 +62,4 @@ const Jadwal = () => {
   return <Table columns={columns} dataSource={data} />;
 };
 
-export default Jadwal;
+export default Kehadiran;

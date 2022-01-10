@@ -1,28 +1,23 @@
 import React from "react";
 import { Carousel } from "antd";
-import bn from "../../assets/baner.png";
-const contentStyle = {
-  height: "260px",
-  color: "#fff",
-  lineHeight: "160px",
-  textAlign: "center",
-  background: "#364d79",
-};
+import bn1 from "../../assets/banner1.jpg";
+import bn2 from "../../assets/banner2.jpg";
+// const contentStyle = {
+//   height: "260px",
+//   color: "#fff",
+//   lineHeight: "160px",
+//   textAlign: "center",
+//   background: "#364d79",
+// };
 
 function InfoBeasiswa() {
   return (
     <Carousel autoplay>
       <div>
-        <img src={bn} alt="" style={{ width: "100%", height: "100%" }} />
+        <img src={bn1} alt="" style={{ width: "100%", height: "280px" }} />
       </div>
       <div>
-        <h3 style={contentStyle}>2</h3>
-      </div>
-      <div>
-        <h3 style={contentStyle}>3</h3>
-      </div>
-      <div>
-        <h3 style={contentStyle}>4</h3>
+        <img src={bn2} alt="" style={{ width: "100%", height: "280px" }} />
       </div>
     </Carousel>
   );

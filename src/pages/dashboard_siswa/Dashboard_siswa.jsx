@@ -1,6 +1,11 @@
 import React from "react";
 import { Layout, Menu } from "antd";
+// import { Route, Link } from "react-router-dom";
 import "./dashboard_siswa.css";
+import logo from "../../assets/logo.png";
+import Login from "../aunth/Login";
+import Profile from "../../componenents/profile/Profile";
+
 import {
   CalendarOutlined,
   FileTextOutlined,
@@ -10,10 +15,8 @@ import {
   QuestionCircleOutlined,
   UserOutlined,
 } from "@ant-design/icons";
-// import Pengumuman from "../pengumuman/pengumuman";
-import InfoBeasiswa from "../Slider/carousel";
-import Jadwal from "../jadwal/Jadwal";
 
+import InfoBeasiswa from "../../componenents/Slider/Carousel";
 const { Header, Content, Footer, Sider } = Layout;
 const { SubMenu } = Menu;
 
@@ -31,30 +34,17 @@ class DashboardSiswa extends React.Component {
     const { collapsed } = this.state;
     return (
       <Layout style={{ minHeight: "100vh" }}>
-        <Sider
-          collapsible
-          collapsed={collapsed}
-          onCollapse={this.onCollapse}
-          style={{
-            backgroundColor: "red",
-          }}
-        >
-          <Menu
-            theme="dark"
-            defaultSelectedKeys={["1"]}
-            mode="inline"
-            style={{
-              backgroundColor: "red",
-            }}
-          >
+        <Sider collapsible collapsed={collapsed} onCollapse={this.onCollapse}>
+          <Menu theme="dark" defaultSelectedKeys={["1"]} mode="inline">
             <Menu.Item key="1" icon={<PieChartOutlined />}>
               Dashboard
             </Menu.Item>
+
             <Menu.Item key="2" icon={<CalendarOutlined />}>
               Jadwal
             </Menu.Item>
             <Menu.Item key="3" icon={<FileTextOutlined />}>
-              Tugas
+              Kelas
             </Menu.Item>
             <Menu.Item key="4" icon={<ProfileOutlined />}>
               Kehadiran
@@ -73,28 +63,44 @@ class DashboardSiswa extends React.Component {
           </Menu>
         </Sider>
         <Layout className="site-layout">
-          <Header className="header" style={{ padding: "20px" }}>
+          <Header
+            className="header"
+            style={{ padding: "20px", backgroundColor: "#fff" }}
+          >
             <div className="logo">
+              <img
+                src={logo}
+                alt="logo"
+                style={{ width: "42px", height: "42px" }}
+              />
               <h4>SISTEM INFORMASI AKADEMIK SMAN 12 OKU TIMUR</h4>
             </div>
-
-            <img
-              src={"https://picsum.photos/seed/13/200"}
-              alt=""
-              style={{
-                width: 36,
-                height: 36,
-                borderRadius: "100px",
-              }}
-            />
+            <div className="user">
+              <div className="nama">
+                <p>Latif Ariyadi</p>
+                <p>
+                  <span>011701503125095</span>
+                </p>
+              </div>
+              <img
+                src={"https://picsum.photos/seed/13/200"}
+                alt=""
+                style={{
+                  width: 36,
+                  height: 36,
+                  borderRadius: "100px",
+                }}
+              />
+            </div>
           </Header>
-          <Content style={{ margin: "20PX 16px" }}>
+          <Content
+            style={{
+              margin: "20px 16px",
+            }}
+          >
             <InfoBeasiswa />
-            {/* <div className="site-layout-background" style={{ minHeight: 360 }}>
-              <Pengumuman />
-            </div> */}
-
-            <Jadwal />
+            <Login />
+            <Profile />
           </Content>
           <Footer style={{ textAlign: "center" }}>
             SMAN 12 OKU TIMUR ©2022 Created by Latif Ariyadi

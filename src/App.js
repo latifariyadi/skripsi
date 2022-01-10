@@ -1,5 +1,5 @@
 import React from "react";
-import DashboardSiswa from "./componenents/dashboard_siswa/dashboard_siswa";
+import DashboardSiswa from "./pages/dashboard_siswa/Dashboard_siswa";
 import "./App.css";
 
 function App() {
