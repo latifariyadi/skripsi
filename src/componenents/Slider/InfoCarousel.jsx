@@ -10,9 +10,9 @@ import bn2 from "../../assets/banner2.jpg";
 //   background: "#364d79",
 // };
 
-function InfoBeasiswa() {
+function InfoCarousel() {
   return (
-    <Carousel autoplay>
+    <Carousel autoplay style={{ marginTop: 50 }}>
       <div>
         <img src={bn1} alt="" style={{ width: "100%", height: "280px" }} />
       </div>
@@ -23,4 +23,4 @@ function InfoBeasiswa() {
   );
 }
 
-export default InfoBeasiswa;
+export default InfoCarousel;

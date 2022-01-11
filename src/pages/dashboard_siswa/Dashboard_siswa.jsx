@@ -3,9 +3,7 @@ import { Layout, Menu } from "antd";
 // import { Route, Link } from "react-router-dom";
 import "./dashboard_siswa.css";
 import logo from "../../assets/logo.png";
-import Login from "../aunth/Login";
-import LoginForm from "../aunth/Login_form";
-import Profile from "../../componenents/profile/Profile";
+import { Link } from "react-router-dom";
 
 import {
   CalendarOutlined,
@@ -17,7 +15,7 @@ import {
   UserOutlined,
 } from "@ant-design/icons";
 
-import InfoBeasiswa from "../../componenents/Slider/Carousel";
+import { Outlet } from "react-router-dom";
 const { Header, Content, Footer, Sider } = Layout;
 const { SubMenu } = Menu;
 
@@ -38,25 +36,33 @@ class DashboardSiswa extends React.Component {
         <Sider collapsible collapsed={collapsed} onCollapse={this.onCollapse}>
           <Menu theme="dark" defaultSelectedKeys={["1"]} mode="inline">
             <Menu.Item key="1" icon={<PieChartOutlined />}>
-              Dashboard
+              <Link to={"/dashboard/info"}>Dashboard</Link>
             </Menu.Item>
 
             <Menu.Item key="2" icon={<CalendarOutlined />}>
-              Jadwal
+              <Link to={"/dashboard/jadwal"}>Jadwal</Link>
             </Menu.Item>
+
             <Menu.Item key="3" icon={<FileTextOutlined />}>
-              Kelas
+              <Link to={"/dashboard/kelas"}>Kelas</Link>
             </Menu.Item>
             <Menu.Item key="4" icon={<ProfileOutlined />}>
-              Kehadiran
+              <Link to={"/dashboard/kehadiran"}>Kehadiran</Link>
             </Menu.Item>
             <SubMenu key="sub1" icon={<FileDoneOutlined />} title="Nilai">
-              <Menu.Item key="5">Tugas</Menu.Item>
-              <Menu.Item key="6">UTS</Menu.Item>
-              <Menu.Item key="7">UAS</Menu.Item>
+              <Menu.Item key="5">
+                <Link to={"/dashboard/tugas"}>Tugas</Link>
+              </Menu.Item>
+
+              <Menu.Item key="6">
+                <Link to={"/dashboard/uts"}>UTS</Link>
+              </Menu.Item>
+              <Menu.Item key="7">
+                <Link to={"/dashboard/uas"}>UAS</Link>
+              </Menu.Item>
             </SubMenu>
             <Menu.Item key="9" icon={<UserOutlined />}>
-              Profil
+              <Link to={"/dashboard/profile"}>Profil</Link>
             </Menu.Item>
             <Menu.Item key="10" icon={<QuestionCircleOutlined />}>
               Bantuan
@@ -99,10 +105,7 @@ class DashboardSiswa extends React.Component {
               margin: "20px 16px",
             }}
           >
-            <InfoBeasiswa />
-            <Login />
-            <LoginForm />
-            <Profile />
+            <Outlet />
           </Content>
           <Footer style={{ textAlign: "center" }}>
             SMAN 12 OKU TIMUR ©2022 Created by Latif Ariyadi
