@@ -4,6 +4,7 @@ import { Layout, Menu } from "antd";
 import "./dashboard_siswa.css";
 import logo from "../../assets/logo.png";
 import Login from "../aunth/Login";
+import LoginForm from "../aunth/Login_form";
 import Profile from "../../componenents/profile/Profile";
 
 import {
@@ -100,6 +101,7 @@ class DashboardSiswa extends React.Component {
           >
             <InfoBeasiswa />
             <Login />
+            <LoginForm />
             <Profile />
           </Content>
           <Footer style={{ textAlign: "center" }}>
