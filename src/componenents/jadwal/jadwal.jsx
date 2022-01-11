@@ -59,7 +59,12 @@ const Jadwal = () => {
     },
   ];
 
-  return <Table columns={columns} dataSource={data} />;
+  return (
+    <>
+      <h1 style={{ fontSize: "2rem", fontWeight: 100 }}>Jadwal</h1>
+      <Table columns={columns} dataSource={data} />
+    </>
+  );
 };
 
 export default Jadwal;
