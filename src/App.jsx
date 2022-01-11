@@ -10,6 +10,7 @@ import Jadwal from "./componenents/jadwal/Jadwal";
 import Kehadiran from "./componenents/kehadiran/Kehadiran";
 import NilaiTugas from "./pages/nilai/NilaiTugas";
 import Profile from "./componenents/profile/Profile";
+import Kelas from "./pages/kelas/Kelas";
 
 const InfoWrapper = () => {
   return (
@@ -34,6 +35,7 @@ function App() {
           <Route path="uts" index element={<NilaiTugas />} />
           <Route path="uas" index element={<NilaiTugas />} />
           <Route path="profile" index element={<Profile />} />
+          <Route path="kelas" index element={<Kelas />} />
         </Route>
       </Routes>
     </div>

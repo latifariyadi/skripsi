@@ -1,0 +1,7 @@
+@tailwind components;
+
+@layer components {
+  .main_text {
+    @apply text-fadliganteng-900 hover:text-orange-500 text-4xl duration-200 hover:animate-bounce cursor-pointer;
+  }
+}
