@@ -33,8 +33,13 @@ class DashboardSiswa extends React.Component {
     const { collapsed } = this.state;
     return (
       <Layout style={{ minHeight: "100vh" }}>
-        <Sider collapsible collapsed={collapsed} onCollapse={this.onCollapse}>
-          <Menu theme="dark" defaultSelectedKeys={["1"]} mode="inline">
+        <Sider
+          collapsible
+          collapsed={collapsed}
+          onCollapse={this.onCollapse}
+          theme="light"
+        >
+          <Menu theme="light" defaultSelectedKeys={["1"]} mode="inline">
             <Menu.Item key="1" icon={<PieChartOutlined />}>
               <Link to={"/dashboard/info"}>Dashboard</Link>
             </Menu.Item>
